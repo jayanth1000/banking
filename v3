@@ -1,0 +1,54 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class BankingAPI {
+    private Map<String, Double> accounts;
+    
+    public BankingAPI() {
+        accounts = new HashMap<>();
+    }
+    
+    public void createAccount(String accountNumber) {
+        accounts.put(accountNumber, 0.0);
+    }
+    
+    public void deposit(String accountNumber, double amount) {
+        if (accounts.containsKey(accountNumber)) {
+            double currentBalance = accounts.get(accountNumber);
+            accounts.put(accountNumber, currentBalance + amount);
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
+    
+    public void withdraw(String accountNumber, double amount) {
+        if (accounts.containsKey(accountNumber)) {
+            double currentBalance = accounts.get(accountNumber);
+            if (currentBalance >= amount) {
+                accounts.put(accountNumber, currentBalance - amount);
+            } else {
+                System.out.println("Insufficient funds.");
+            }
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
+    
+    public double checkBalance(String accountNumber) {
+        if (accounts.containsKey(accountNumber)) {
+            return accounts.get(accountNumber);
+        } else {
+            System.out.println("Account not found.");
+            return 0.0;
+        }
+    }
+    
+    public static void main(String[] args) {
+        BankingAPI api = new BankingAPI();
+        api.createAccount("12345");
+        api.deposit("12345", 100.0);
+        api.withdraw("12345", 50.0);
+        double balance = api.checkBalance("12345");
+        System.out.println(balance);
+    }
+}
