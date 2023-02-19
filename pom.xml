@@ -40,11 +40,12 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>banking-api</mainClass>
+                            <mainClass>BankingAPI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>banking-api</finalName>
     </build>
 </project>
