@@ -12,4 +12,3 @@ ADD target/banking-api.jar banking-api.jar
 
 # Define the command to run the application
 ENTRYPOINT ["java", "-jar", "banking-api.jar"]
-ˇ
