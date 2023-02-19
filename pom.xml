@@ -40,7 +40,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>BankingAPI</mainClass>
+                            <mainClass>banking-api</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
