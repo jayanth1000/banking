@@ -5,11 +5,11 @@ FROM openjdk:11-jre-slim
 EXPOSE 8080
 
 # Copy the jar file into the container at /app
-ADD target/BankingAPI.jar BankingAPI.jar
+ADD target/banking-api.jar banking-api.jar
 
 # Expose port 8080 for the container
 
 
 # Define the command to run the application
-ENTRYPOINT ["java", "-jar", "BankingAPI.jar"]
+ENTRYPOINT ["java", "-jar", "banking-api.jar"]
 ˇ
